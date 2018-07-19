@@ -13,7 +13,7 @@ class NoSleep {
     } else {
       // Set up no sleep video element
       this.noSleepVideo = document.createElement('video')
-
+      this.noSleepVideo.setAttribute('muted', true)
       this.noSleepVideo.setAttribute('title', 'No Sleep')
       this.noSleepVideo.setAttribute('playsinline', '')
       this.noSleepVideo.setAttribute('src', mediaFile)
@@ -34,6 +34,7 @@ class NoSleep {
         window.setTimeout(window.stop, 0)
       }, 15000)
     } else {
+      this.noSleepVideo.setAttribute('muted', false)
       this.noSleepVideo.play()
     }
   }
@@ -45,6 +46,7 @@ class NoSleep {
         this.noSleepTimer = null
       }
     } else {
+      this.noSleepVideo.setAttribute('muted', true)
       this.noSleepVideo.pause()
     }
   }
